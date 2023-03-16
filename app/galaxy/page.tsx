@@ -5,17 +5,29 @@ import styles from './page.module.css'
 import * as THREE from 'three'
 
 import React, { useEffect, useRef, useState } from 'react'
-import { Canvas, useFrame, ThreeElements,useLoader } from '@react-three/fiber'
+import { Canvas, useFrame, ThreeElements} from '@react-three/fiber'
 import Navbar from '../components/Navbar'
 import Sidebar from '../components/Sidebar'
 import { OrbitControls } from '@react-three/drei'
 import { BackSide } from 'three'
 
+import { useLoader } from '@react-three/fiber'
+
+
+
+
+
+
 
 function Galaxy(props: any)  {
   
   const ref = useRef<THREE.Mesh>(null!)
-  const texturebg = useLoader(THREE.TextureLoader, './static/1.jpg')
+  
+    const texturebg =  useLoader(THREE.TextureLoader, './static/1.jpg')
+  
+    
+
+  
 
   return (
   
@@ -69,6 +81,7 @@ function Sun(props: any)  {
 }
 
 export default function Home() {
+
   const [Id_, setId_] = useState(0)
   const red = useLoader(THREE.TextureLoader, './static/suns/sun.jpg')
   const azure = useLoader(THREE.TextureLoader, './static/suns/sunazure.jpg')
@@ -82,7 +95,9 @@ export default function Home() {
 
 
 
-  return (
+  return  (
+    
+    
     <div className={styles.main}>
       <Navbar/>
       <Sidebar id={Id_}/>
@@ -110,5 +125,7 @@ export default function Home() {
 
   </Canvas>,
     </div>
-  )
+    
+  
+  ) 
 }

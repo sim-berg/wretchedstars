@@ -1,5 +1,5 @@
 import './globals.css'
-
+import NoSSRWrapper from './components/NoSSRWrapper'
 export const metadata = {
   title: 'wretched stars',
   description: 'cool stuff',
@@ -12,7 +12,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body><NoSSRWrapper>{children}</NoSSRWrapper></body>
     </html>
   )
 }
